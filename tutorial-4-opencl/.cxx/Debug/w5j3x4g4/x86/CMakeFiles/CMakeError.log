@@ -1,0 +1,162 @@
+Determining if the CL_VERSION_2_2 exist failed with the following output:
+Change Dir: C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\DELL\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_33c77 && [1/2] Building CXX object CMakeFiles/cmTC_33c77.dir/CheckSymbolExists.cxx.o
+FAILED: CMakeFiles/cmTC_33c77.dir/CheckSymbolExists.cxx.o 
+C:\Users\DELL\AppData\Local\Android\Sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/DELL/AppData/Local/Android/Sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -fPIE -MD -MT CMakeFiles/cmTC_33c77.dir/CheckSymbolExists.cxx.o -MF CMakeFiles\cmTC_33c77.dir\CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_33c77.dir/CheckSymbolExists.cxx.o -c C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:2:10: fatal error: 'OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h' file not found
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+File C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_2
+  return ((int*)(&CL_VERSION_2_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_2_1 exist failed with the following output:
+Change Dir: C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\DELL\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_e6161 && [1/2] Building CXX object CMakeFiles/cmTC_e6161.dir/CheckSymbolExists.cxx.o
+FAILED: CMakeFiles/cmTC_e6161.dir/CheckSymbolExists.cxx.o 
+C:\Users\DELL\AppData\Local\Android\Sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/DELL/AppData/Local/Android/Sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -fPIE -MD -MT CMakeFiles/cmTC_e6161.dir/CheckSymbolExists.cxx.o -MF CMakeFiles\cmTC_e6161.dir\CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_e6161.dir/CheckSymbolExists.cxx.o -c C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:2:10: fatal error: 'OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h' file not found
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+File C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_1
+  return ((int*)(&CL_VERSION_2_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_2_0 exist failed with the following output:
+Change Dir: C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\DELL\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_438b6 && [1/2] Building CXX object CMakeFiles/cmTC_438b6.dir/CheckSymbolExists.cxx.o
+FAILED: CMakeFiles/cmTC_438b6.dir/CheckSymbolExists.cxx.o 
+C:\Users\DELL\AppData\Local\Android\Sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/DELL/AppData/Local/Android/Sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -fPIE -MD -MT CMakeFiles/cmTC_438b6.dir/CheckSymbolExists.cxx.o -MF CMakeFiles\cmTC_438b6.dir\CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_438b6.dir/CheckSymbolExists.cxx.o -c C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:2:10: fatal error: 'OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h' file not found
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+File C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_2_0
+  return ((int*)(&CL_VERSION_2_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_2 exist failed with the following output:
+Change Dir: C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\DELL\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_58ed9 && [1/2] Building CXX object CMakeFiles/cmTC_58ed9.dir/CheckSymbolExists.cxx.o
+FAILED: CMakeFiles/cmTC_58ed9.dir/CheckSymbolExists.cxx.o 
+C:\Users\DELL\AppData\Local\Android\Sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/DELL/AppData/Local/Android/Sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -fPIE -MD -MT CMakeFiles/cmTC_58ed9.dir/CheckSymbolExists.cxx.o -MF CMakeFiles\cmTC_58ed9.dir\CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_58ed9.dir/CheckSymbolExists.cxx.o -c C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:2:10: fatal error: 'OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h' file not found
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+File C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_2
+  return ((int*)(&CL_VERSION_1_2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_1 exist failed with the following output:
+Change Dir: C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\DELL\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_716e0 && [1/2] Building CXX object CMakeFiles/cmTC_716e0.dir/CheckSymbolExists.cxx.o
+FAILED: CMakeFiles/cmTC_716e0.dir/CheckSymbolExists.cxx.o 
+C:\Users\DELL\AppData\Local\Android\Sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/DELL/AppData/Local/Android/Sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -fPIE -MD -MT CMakeFiles/cmTC_716e0.dir/CheckSymbolExists.cxx.o -MF CMakeFiles\cmTC_716e0.dir\CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_716e0.dir/CheckSymbolExists.cxx.o -c C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:2:10: fatal error: 'OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h' file not found
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+File C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_1
+  return ((int*)(&CL_VERSION_1_1))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CL_VERSION_1_0 exist failed with the following output:
+Change Dir: C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\DELL\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_aa6b5 && [1/2] Building CXX object CMakeFiles/cmTC_aa6b5.dir/CheckSymbolExists.cxx.o
+FAILED: CMakeFiles/cmTC_aa6b5.dir/CheckSymbolExists.cxx.o 
+C:\Users\DELL\AppData\Local\Android\Sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/DELL/AppData/Local/Android/Sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security    -fPIE -MD -MT CMakeFiles/cmTC_aa6b5.dir/CheckSymbolExists.cxx.o -MF CMakeFiles\cmTC_aa6b5.dir\CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_aa6b5.dir/CheckSymbolExists.cxx.o -c C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:2:10: fatal error: 'OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h' file not found
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+File C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CL_VERSION_1_0
+  return ((int*)(&CL_VERSION_1_0))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}

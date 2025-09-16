@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86",
+  "command": "C:\\Users\\DELL\\AppData\\Local\\Android\\Sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/DELL/AppData/Local/Android/Sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DJNIpart_EXPORTS -IC:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/jni -isystem C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/sdk/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\JNIpart.dir\\CLprocessor.cpp.o -c C:\\Users\\DELL\\Downloads\\opencv-4.11.0-android-sdk\\OpenCV-android-sdk\\samples\\tutorial-4-opencl\\jni\\CLprocessor.cpp",
+  "file": "C:\\Users\\DELL\\Downloads\\opencv-4.11.0-android-sdk\\OpenCV-android-sdk\\samples\\tutorial-4-opencl\\jni\\CLprocessor.cpp"
+},
+{
+  "directory": "C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/.cxx/Debug/w5j3x4g4/x86",
+  "command": "C:\\Users\\DELL\\AppData\\Local\\Android\\Sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/DELL/AppData/Local/Android/Sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/sysroot -DJNIpart_EXPORTS -IC:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/samples/tutorial-4-opencl/jni -isystem C:/Users/DELL/Downloads/opencv-4.11.0-android-sdk/OpenCV-android-sdk/sdk/native/jni/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles\\JNIpart.dir\\jni.cpp.o -c C:\\Users\\DELL\\Downloads\\opencv-4.11.0-android-sdk\\OpenCV-android-sdk\\samples\\tutorial-4-opencl\\jni\\jni.cpp",
+  "file": "C:\\Users\\DELL\\Downloads\\opencv-4.11.0-android-sdk\\OpenCV-android-sdk\\samples\\tutorial-4-opencl\\jni\\jni.cpp"
+}
+]

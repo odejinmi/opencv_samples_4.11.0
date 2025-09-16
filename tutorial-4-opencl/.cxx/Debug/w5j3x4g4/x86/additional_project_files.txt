@@ -1,0 +1,2 @@
+C:\Users\DELL\Downloads\opencv-4.11.0-android-sdk\OpenCV-android-sdk\samples\tutorial-4-opencl\jni\CLprocessor.hpp
+C:\Users\DELL\Downloads\opencv-4.11.0-android-sdk\OpenCV-android-sdk\samples\tutorial-4-opencl\jni\common.hpp

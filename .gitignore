@@ -1,0 +1,5 @@
+# Project exclude paths
+/.gradle/
+/build/
+/tutorial-2-mixedprocessing/build/
+/tutorial-4-opencl/build/
