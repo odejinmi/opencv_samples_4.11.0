@@ -3,25 +3,65 @@ package org.opencv.core
 import org.opencv.core.Mat.*
 import java.lang.RuntimeException
 
-fun Mat.get(row: Int, col: Int, data: UByteArray)  = this.get(row, col, data.asByteArray())
-fun Mat.get(indices: IntArray, data: UByteArray)  = this.get(indices, data.asByteArray())
-fun Mat.put(row: Int, col: Int, data: UByteArray)  = this.put(row, col, data.asByteArray())
-fun Mat.put(indices: IntArray, data: UByteArray)  = this.put(indices, data.asByteArray())
+// Safe conversion functions
+private fun UByteArray.toByteArray(): ByteArray = ByteArray(this.size) { this[it].toByte() }
+private fun UShortArray.toShortArray(): ShortArray = ShortArray(this.size) { this[it].toShort() }
 
-fun Mat.get(row: Int, col: Int, data: UShortArray)  = this.get(row, col, data.asShortArray())
-fun Mat.get(indices: IntArray, data: UShortArray)  = this.get(indices, data.asShortArray())
-fun Mat.put(row: Int, col: Int, data: UShortArray)  = this.put(row, col, data.asShortArray())
-fun Mat.put(indices: IntArray, data: UShortArray)  = this.put(indices, data.asShortArray())
+// Extension functions with proper type handling
+fun Mat.get(row: Int, col: Int, data: UByteArray): Int {
+    val byteData = ByteArray(data.size)
+    val result = this.get(row, col, byteData)
+    for (i in data.indices) {
+        data[i] = byteData[i].toUByte()
+    }
+    return result
+}
 
-/***
- *  Example use:
- *
- *  val (b, g, r) = mat.at<UByte>(50, 50).v3c
- *  mat.at<UByte>(50, 50).val = T3(245u, 113u, 34u)
- *
- */
+fun Mat.get(indices: IntArray, data: UByteArray): Int {
+    val byteData = ByteArray(data.size)
+    val result = this.get(indices, byteData)
+    for (i in data.indices) {
+        data[i] = byteData[i].toUByte()
+    }
+    return result
+}
+
+fun Mat.put(row: Int, col: Int, data: UByteArray): Int {
+    return this.put(row, col, data.toByteArray())
+}
+
+fun Mat.put(indices: IntArray, data: UByteArray): Int {
+    return this.put(indices, data.toByteArray())
+}
+
+fun Mat.get(row: Int, col: Int, data: UShortArray): Int {
+    val shortData = ShortArray(data.size)
+    val result = this.get(row, col, shortData)
+    for (i in data.indices) {
+        data[i] = shortData[i].toUShort()
+    }
+    return result
+}
+
+fun Mat.get(indices: IntArray, data: UShortArray): Int {
+    val shortData = ShortArray(data.size)
+    val result = this.get(indices, shortData)
+    for (i in data.indices) {
+        data[i] = shortData[i].toUShort()
+    }
+    return result
+}
+
+fun Mat.put(row: Int, col: Int, data: UShortArray): Int {
+    return this.put(row, col, data.toShortArray())
+}
+
+fun Mat.put(indices: IntArray, data: UShortArray): Int {
+    return this.put(indices, data.toShortArray())
+}
+
 @Suppress("UNCHECKED_CAST")
-inline fun <reified T> Mat.at(row: Int, col: Int) : Atable<T> =
+inline fun <reified T> Mat.at(row: Int, col: Int): Atable<T> =
     when (T::class) {
         Byte::class, Double::class, Float::class, Int::class, Short::class -> this.at(
             T::class.java,
@@ -34,7 +74,7 @@ inline fun <reified T> Mat.at(row: Int, col: Int) : Atable<T> =
     }
 
 @Suppress("UNCHECKED_CAST")
-inline fun <reified T> Mat.at(idx: IntArray) : Atable<T> =
+inline fun <reified T> Mat.at(idx: IntArray): Atable<T> =
     when (T::class) {
         Byte::class, Double::class, Float::class, Int::class, Short::class -> this.at(
             T::class.java,
@@ -45,7 +85,7 @@ inline fun <reified T> Mat.at(idx: IntArray) : Atable<T> =
         else -> throw RuntimeException("Unsupported class type")
     }
 
-class AtableUByte(val mat: Mat, val indices: IntArray): Atable<UByte> {
+class AtableUByte(val mat: Mat, val indices: IntArray) : Atable<UByte> {
 
     constructor(mat: Mat, row: Int, col: Int) : this(mat, intArrayOf(row, col))
 
@@ -67,7 +107,10 @@ class AtableUByte(val mat: Mat, val indices: IntArray): Atable<UByte> {
     }
 
     override fun setV2c(v: Tuple2<UByte>) {
-        val data = ubyteArrayOf(v._0, v._1)
+        // Safe access to tuple values
+        val val0 = v.get_0() ?: 0u.toUByte()
+        val val1 = v.get_1() ?: 0u.toUByte()
+        val data = ubyteArrayOf(val0, val1)
         mat.put(indices, data)
     }
 
@@ -78,7 +121,10 @@ class AtableUByte(val mat: Mat, val indices: IntArray): Atable<UByte> {
     }
 
     override fun setV3c(v: Tuple3<UByte>) {
-        val data = ubyteArrayOf(v._0, v._1, v._2)
+        val val0 = v.get_0() ?: 0u.toUByte()
+        val val1 = v.get_1() ?: 0u.toUByte()
+        val val2 = v.get_2() ?: 0u.toUByte()
+        val data = ubyteArrayOf(val0, val1, val2)
         mat.put(indices, data)
     }
 
@@ -89,12 +135,16 @@ class AtableUByte(val mat: Mat, val indices: IntArray): Atable<UByte> {
     }
 
     override fun setV4c(v: Tuple4<UByte>) {
-        val data = ubyteArrayOf(v._0, v._1, v._2, v._3)
+        val val0 = v.get_0() ?: 0u.toUByte()
+        val val1 = v.get_1() ?: 0u.toUByte()
+        val val2 = v.get_2() ?: 0u.toUByte()
+        val val3 = v.get_3() ?: 0u.toUByte()
+        val data = ubyteArrayOf(val0, val1, val2, val3)
         mat.put(indices, data)
     }
 }
 
-class AtableUShort(val mat: Mat, val indices: IntArray): Atable<UShort> {
+class AtableUShort(val mat: Mat, val indices: IntArray) : Atable<UShort> {
 
     constructor(mat: Mat, row: Int, col: Int) : this(mat, intArrayOf(row, col))
 
@@ -116,7 +166,9 @@ class AtableUShort(val mat: Mat, val indices: IntArray): Atable<UShort> {
     }
 
     override fun setV2c(v: Tuple2<UShort>) {
-        val data = ushortArrayOf(v._0, v._1)
+        val val0 = v.get_0() ?: 0u.toUShort()
+        val val1 = v.get_1() ?: 0u.toUShort()
+        val data = ushortArrayOf(val0, val1)
         mat.put(indices, data)
     }
 
@@ -127,7 +179,10 @@ class AtableUShort(val mat: Mat, val indices: IntArray): Atable<UShort> {
     }
 
     override fun setV3c(v: Tuple3<UShort>) {
-        val data = ushortArrayOf(v._0, v._1, v._2)
+        val val0 = v.get_0() ?: 0u.toUShort()
+        val val1 = v.get_1() ?: 0u.toUShort()
+        val val2 = v.get_2() ?: 0u.toUShort()
+        val data = ushortArrayOf(val0, val1, val2)
         mat.put(indices, data)
     }
 
@@ -138,23 +193,29 @@ class AtableUShort(val mat: Mat, val indices: IntArray): Atable<UShort> {
     }
 
     override fun setV4c(v: Tuple4<UShort>) {
-        val data = ushortArrayOf(v._0, v._1, v._2, v._3)
+        val val0 = v.get_0() ?: 0u.toUShort()
+        val val1 = v.get_1() ?: 0u.toUShort()
+        val val2 = v.get_2() ?: 0u.toUShort()
+        val val3 = v.get_3() ?: 0u.toUShort()
+        val data = ushortArrayOf(val0, val1, val2, val3)
         mat.put(indices, data)
     }
 }
 
-operator fun <T> Tuple2<T>.component1(): T = this._0
-operator fun <T> Tuple2<T>.component2(): T = this._1
+// Component operators - using proper OpenCV Tuple API
+operator fun <T> Tuple2<T>.component1(): T? = this.get_0()
+operator fun <T> Tuple2<T>.component2(): T? = this.get_1()
 
-operator fun <T> Tuple3<T>.component1(): T = this._0
-operator fun <T> Tuple3<T>.component2(): T = this._1
-operator fun <T> Tuple3<T>.component3(): T = this._2
+operator fun <T> Tuple3<T>.component1(): T? = this.get_0()
+operator fun <T> Tuple3<T>.component2(): T? = this.get_1()
+operator fun <T> Tuple3<T>.component3(): T? = this.get_2()
 
-operator fun <T> Tuple4<T>.component1(): T = this._0
-operator fun <T> Tuple4<T>.component2(): T = this._1
-operator fun <T> Tuple4<T>.component3(): T = this._2
-operator fun <T> Tuple4<T>.component4(): T = this._3
+operator fun <T> Tuple4<T>.component1(): T? = this.get_0()
+operator fun <T> Tuple4<T>.component2(): T? = this.get_1()
+operator fun <T> Tuple4<T>.component3(): T? = this.get_2()
+operator fun <T> Tuple4<T>.component4(): T? = this.get_3()
 
-fun <T> T2(_0: T, _1: T) : Tuple2<T> = Tuple2(_0, _1)
-fun <T> T3(_0: T, _1: T, _2: T) : Tuple3<T> = Tuple3(_0, _1, _2)
-fun <T> T4(_0: T, _1: T, _2: T, _3: T) : Tuple4<T> = Tuple4(_0, _1, _2, _3)
+// Helper functions
+fun <T> T2(_0: T, _1: T): Tuple2<T> = Tuple2(_0, _1)
+fun <T> T3(_0: T, _1: T, _2: T): Tuple3<T> = Tuple3(_0, _1, _2)
+fun <T> T4(_0: T, _1: T, _2: T, _3: T): Tuple4<T> = Tuple4(_0, _1, _2, _3)

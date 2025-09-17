@@ -90,6 +90,7 @@
 
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
+
 try {
     apply plugin: 'kotlin-android'
     println "Configure OpenCV with Kotlin"
@@ -129,6 +130,10 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
     }
 
     buildTypes {

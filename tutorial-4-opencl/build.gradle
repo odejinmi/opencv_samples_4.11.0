@@ -2,32 +2,32 @@ apply plugin: 'com.android.application'
 
 android {
     namespace 'org.opencv.samples.tutorial4'
-    compileSdkVersion 34
+    compileSdkVersion 36
     defaultConfig {
         applicationId "org.opencv.samples.tutorial4"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 301
         versionName "3.01"
 
         externalNativeBuild {
             cmake {
-                if (gradle.opencv_source == "sdk_path") {
+//                if (gradle.opencv_source == "sdk_path") {
                     arguments "-DOpenCV_DIR=" + project(':opencv').projectDir + "/native/jni",
                               "-DOPENCV_FROM_SDK=TRUE",
                               "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON",
                               "-DANDROID_OPENCL_SDK=" ,
-"-DANDROID_TOOLCHAIN=clang",
-"-DANDROID_STL=c++_shared"
-
-                } else {
-                    arguments "-DOPENCV_VERSION_MAJOR=4",
-                              "-DOPENCV_FROM_SDK=FALSE",
-                              "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON",
-                              "-DANDROID_OPENCL_SDK=" ,
-"-DANDROID_TOOLCHAIN=clang",
-"-DANDROID_STL=c++_shared"
-                }
+                            "-DANDROID_TOOLCHAIN=clang",
+                            "-DANDROID_STL=c++_shared"
+//
+//                } else {
+//                    arguments "-DOPENCV_VERSION_MAJOR=4",
+//                              "-DOPENCV_FROM_SDK=FALSE",
+//                              "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON",
+//                              "-DANDROID_OPENCL_SDK=" ,
+//"-DANDROID_TOOLCHAIN=clang",
+//"-DANDROID_STL=c++_shared"
+//                }
                 targets "JNIpart"
             }
         }
@@ -38,6 +38,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
     sourceSets {
         main {
             java.srcDirs = ['src']
@@ -51,19 +56,19 @@ android {
         }
     }
     buildFeatures {
-        if (gradle.opencv_source == "maven_local" || gradle.opencv_source == "maven_central") {
-            prefab true
-        }
+//        if (gradle.opencv_source == "maven_local" || gradle.opencv_source == "maven_central") {
+//            prefab true
+//        }
     }
 }
 
 dependencies {
     //implementation fileTree(dir: 'libs', include: ['*.jar'])
-    if (gradle.opencv_source == "sdk_path") {
-        println 'Using OpenCV from SDK'
+//    if (gradle.opencv_source == "sdk_path") {
+//        println 'Using OpenCV from SDK'
         implementation project(':opencv')
-    } else if (gradle.opencv_source == "maven_local" || gradle.opencv_source == "maven_central") {
-        println 'Using OpenCV from Maven repo'
-        implementation 'org.opencv:opencv:4.11.0'
-    }
+//    } else if (gradle.opencv_source == "maven_local" || gradle.opencv_source == "maven_central") {
+//        println 'Using OpenCV from Maven repo'
+//        implementation 'org.opencv:opencv:4.11.0'
+//    }
 }
